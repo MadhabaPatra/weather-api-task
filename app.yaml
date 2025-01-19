@@ -1,0 +1,12 @@
+service: weather-api
+runtime: nodejs20
+
+env_variables:
+ NODE_ENV: "production"
+ IP_INFO_API_ACCESS_TOKEN: ""
+ OPEN_WEATHER_API_KEY: ""
+
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2

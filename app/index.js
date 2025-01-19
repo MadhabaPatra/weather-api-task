@@ -5,7 +5,6 @@
 
 const express = require("express");
 const apiRateLimiter = require("./middlewares/apiRateLimiter");
-const requestIp = require("request-ip");
 const helmet = require("helmet");
 
 // Initiate express app
