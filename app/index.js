@@ -15,12 +15,15 @@ const app = express();
 // Middlewares
 
 app.use(helmet()); // Enable default security headers
-app.use(apiRateLimiter); // Rate limit : 5 Requests per minute
 
-// Routes
-app.use("/", require("./weather/routes"));
+// Health check
 app.get("/health", (req, res) => {
-  return res.send("ok");
+  res
+    .status(200)
+    .json({ status: "UP", uptime: process.uptime(), timestamp: Date.now() });
 });
+
+// Weather api routes
+app.use("/", apiRateLimiter, require("./weather/routes"));
 
 module.exports = app;
