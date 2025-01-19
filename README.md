@@ -141,10 +141,6 @@ npm test
    ```bash
    docker run -it -p 8080:8080 weather-api
    ```
-4. Deploy to google cloud run
-   ```bash
-   docker run -it -p 8080:8080 weather-api
-   ```
 ---
 
 ## References
